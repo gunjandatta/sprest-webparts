@@ -22,7 +22,8 @@ export class DocViewWebPart extends WebPartSearch {
     constructor(props) {
         super(props);
 
-        // Update the query to include the document fields
+        // Update the query to order by the filename, and include the document fields
+        this._query.OrderBy = ["LinkFilename"];
         this._query.Select = ["DocIcon", "FileRef", "ID", "LinkFilename"];
     }
 
