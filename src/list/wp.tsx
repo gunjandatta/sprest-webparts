@@ -70,9 +70,9 @@ export class ListWebpart extends WebPartSearch<IWebPartSearchProps, State> {
 
             // Return the container
             return (
-                <div className="ms-Grid">
+                <div className="list">
                     {elItems}
-                    <div className="ms-Grid-row" key="item_form">
+                    <div className="list-row" key="item_form">
                         <Panel headerText="Item Form" ref={panel => { this._panel = panel; }}>
                             <div className="">{this.state.errorMessage + ""}</div>
                             <ItemForm
@@ -106,7 +106,7 @@ export class ListWebpart extends WebPartSearch<IWebPartSearchProps, State> {
 
         // Not items exist
         return (
-            <div className="ms-fontSize-l">No items exist...</div>
+            <div className="empty-list">No items exist...</div>
         );
     }
 
@@ -114,26 +114,26 @@ export class ListWebpart extends WebPartSearch<IWebPartSearchProps, State> {
     onRenderItem = (item: IListItem) => {
         // Return the item
         return (
-            <div className="ms-Grid-row" key={"item_" + item.Id}>
-                <div className="ms-Grid-col ms-md-1">
+            <div className="list-row" key={"item_" + item.Id}>
+                <div className="list-col-button">
                     <PrimaryButton text="View" data-itemId={item.Id} onClick={this.viewItem} />
                 </div>
-                <div className="ms-Grid-col ms-md-1">
+                <div className="list-col-button">
                     <PrimaryButton text="Edit" data-itemId={item.Id} onClick={this.editItem} />
                 </div>
-                <div className="ms-Grid-col ms-md-2">
+                <div className="list-col">
                     {item.Title ? item.Title : ""}
                 </div>
-                <div className="ms-Grid-col ms-md-2">
+                <div className="list-col">
                     {item.TestChoice ? item.TestChoice : ""}
                 </div>
-                <div className="ms-Grid-col ms-md-2">
+                <div className="list-col">
                     {item.TestDate ? item.TestDate : ""}
                 </div>
-                <div className="ms-Grid-col ms-md-2">
+                <div className="list-col">
                     {item.TestUrl ? item.TestUrl : ""}
                 </div>
-                <div className="ms-Grid-col ms-md-2">
+                <div className="list-col">
                     {item.TestUser ? item.TestUser.Title : ""}
                 </div>
             </div>

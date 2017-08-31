@@ -1,6 +1,7 @@
 import * as React from "react";
 import { ContextInfo } from "gd-sprest";
 import { WebPartSearch, IWebPartSearchItem } from "gd-sprest-react";
+import { Icon } from "office-ui-fabric-react";
 declare var SP;
 
 /**
@@ -65,8 +66,8 @@ export class DocViewWebPart extends WebPartSearch {
 
         // Render the container
         return (
-            <div className="ms-Grid">
-                <div className="ms-Grid-row">{elements}</div>
+            <div className="docView">
+                <div className="docView-row">{elements}</div>
             </div>
         );
     }
@@ -78,43 +79,42 @@ export class DocViewWebPart extends WebPartSearch {
         // Compute the document image url
         let docUrl = ContextInfo.webAbsoluteUrl + "/_layouts/15/WopiFrame2.aspx?sourcedoc=" + item.FileRef + "&action=present";
 
-        // Determine the icon
-        let icon = "";
+        // Determine the icon name
+        let iconName = null;
         switch (item.DocIcon) {
             case "docx":
-                icon = "WordLogo";
+                iconName = "WordLogo";
                 isOfficeDocFl = true;
                 break;
             case "pdf":
-                icon = "PDF";
+                iconName = "PDF";
                 break;
             case "pptx":
-                icon = "PowerPointLogo";
+                iconName = "PowerPointLogo";
                 isOfficeDocFl = true;
                 break;
             case "vsdx":
-                icon = "VisioLogo";
+                iconName = "VisioLogo";
                 isOfficeDocFl = true;
                 break;
             case "xlsx":
-                icon = "ExcelLogo";
+                iconName = "ExcelLogo";
                 isOfficeDocFl = true;
                 break;
             default:
-                icon = "Document";
+                iconName = "Document";
                 break;
         }
 
         // Render the item
         return (
-            <div
-                className="ms-Grid-col ms-md1 ms-textAlignCenter docView-item"
+            <div className="docView-item"
                 data-docUrl={isOfficeDocFl ? docUrl : item.FileRef}
                 data-isOfficeDoc={isOfficeDocFl}
                 key={"item_" + item.Id}
                 onClick={this.onDocIconClicked}>
-                <i className={"ms-fontSize-su ms-Icon ms-Icon--" + icon} />
-                <span className="ms-fontSize-mPlus">{item.LinkFilename}</span>
+                <Icon className="docView-icon" iconName={iconName} />
+                <span className="dovView-title">{item.LinkFilename}</span>
             </div>
         );
     }

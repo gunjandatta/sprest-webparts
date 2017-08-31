@@ -1,4 +1,31 @@
-.docView-item {
-    cursor: pointer;
-    i {display: block;}
+@import "~office-ui-fabric-react/dist/sass/Fabric";
+
+// Target the document view webpart
+#wp-docView {
+    // The document view
+    .docView {
+        @include ms-Grid;
+        // The document view row
+        .docView-row {
+            @include ms-Grid-row;
+
+            .docView-item {
+                @include ms-Grid-col;
+                @include ms-md1;
+                @include ms-textAlign(center);
+                cursor: pointer;
+                i {display: block;}
+
+                // The document view item
+                .docView-icon {
+                    @include ms-fontSize-su;
+                }
+
+                // The document title
+                .dovView-title {
+                    @include ms-fontSize-mPlus;
+                }
+            }
+        }
+    }
 }

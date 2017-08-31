@@ -1,6 +1,7 @@
 import { WebPart, WebPartSearchCfg } from "gd-sprest-react";
 import { Configuration } from "./cfg";
 import { ListWebpart } from "./wp";
+import "./list.scss";
 
 /**
  * List
