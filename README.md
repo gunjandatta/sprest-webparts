@@ -12,3 +12,6 @@ A mapper will be generated from the field values, and used as a tag picker for f
 
 ### Hello World WebPart
 Probably the first one you should look at. It's a simple example of using the webpart component, and the OnRenderDisplay and OnRenderEdit events. The page will render the webpart id in display mode, and a message indicating it's an edit mode when the page is being edited.
+
+### List WebPart
+An example of extending the WebPart Search class to display a list view and item form. The "ItemForm" component will be used to render the item form panel.
