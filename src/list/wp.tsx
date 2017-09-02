@@ -77,24 +77,6 @@ export class ListWebpart extends WebPartSearch<IWebPartSearchProps, State> {
                             <div className="">{this.state.errorMessage + ""}</div>
                             <ItemForm
                                 controlMode={this.state.controlMode}
-                                fields={[
-                                    { name: "Attachments" },
-                                    { name: "Title" },
-                                    { name: "TestBoolean" },
-                                    { name: "TestChoice" },
-                                    { name: "TestDate" },
-                                    { name: "TestDateTime" },
-                                    { name: "TestLookup" },
-                                    { name: "TestManagedMetadata" },
-                                    { name: "TestMultiChoice" },
-                                    { name: "TestMultiLookup" },
-                                    { name: "TestMultiUser" },
-                                    { name: "TestNote" },
-                                    { name: "TestNumberDecimal" },
-                                    { name: "TestNumberInteger" },
-                                    { name: "TestUrl" },
-                                    { name: "TestUser" }
-                                ]}
                                 item={this.state.item}
                                 listName={this.props.cfg.ListName}
                             />
