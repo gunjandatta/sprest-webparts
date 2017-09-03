@@ -1,4 +1,5 @@
 import { DocView } from "./docView";
+import { Email } from "./email";
 import { HelloWorld } from "./helloWorld";
 import { List } from "./list";
 declare var SP;
@@ -6,6 +7,7 @@ declare var SP;
 // Create the Demo WebParts global variable
 window["DemoWebParts"] = {
     DocView,
+    Email,
     HelloWorld,
     List
 };

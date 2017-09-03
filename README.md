@@ -10,6 +10,9 @@ Simple example of using the WebPartSearch classes to display documents. The sear
 
 A mapper will be generated from the field values, and used as a tag picker for filtering the documents. Clicking on an office document will display it in the office app.
 
+### Email WebPart
+Simple example of using the SP People Picker component and the email class of the gd-sprest library.
+
 ### Hello World WebPart
 Probably the first one you should look at. It's a simple example of using the webpart component, and the OnRenderDisplay and OnRenderEdit events. The page will render the webpart id in display mode, and a message indicating it's an edit mode when the page is being edited.
 
