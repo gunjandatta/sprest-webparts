@@ -1,6 +1,9 @@
 # SharePoint React WebParts
 This project provides examples of using the [gd-sprest](https://gunjandatta.github.io/sprest/) and [gd-sprest-react](https://github.com/gunjandatta/sprest-react) libraries. These solutions are designed for SharePoint 2013, but is supported in SharePoint 2013/2016 and Office 365.
 
+### Blog Post
+Refer to this [blog post](http://dattabase.com/sharepoint-react-webparts/) for details on the available webparts to inherit from. The blog post gives an overview of the code for the "Document View WebPart" example.
+
 ### Document View WebPart
 Simple example of using the WebPartSearch classes to display documents. The search webpart class allows the user to select the searchable fields, currently limited to:
 * Choice/Multi-Choice
