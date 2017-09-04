@@ -104,8 +104,8 @@ export const Configuration = new Helper.SPConfig({
 
     WebPartCfg: [
         {
-            FileName: "sprest-react-demo.webpart",
-            Group: "Demo",
+            FileName: "wp_list.webpart",
+            Group: "Dattabase",
             XML:
             `<?xml version="1.0" encoding="utf-8"?>
 <webParts>
