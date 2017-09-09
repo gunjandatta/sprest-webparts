@@ -2,6 +2,7 @@ import { DocView } from "./docView";
 import { Email } from "./email";
 import { HelloWorld } from "./helloWorld";
 import { List } from "./list";
+import { Tabs } from "./tabs";
 declare var SP;
 
 // Create the Demo WebParts global variable
@@ -9,7 +10,8 @@ window["DemoWebParts"] = {
     DocView,
     Email,
     HelloWorld,
-    List
+    List,
+    Tabs
 };
 
 // Let SharePoint know this file has loaded

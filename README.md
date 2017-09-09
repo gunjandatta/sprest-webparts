@@ -21,3 +21,6 @@ Probably the first one you should look at. It's a simple example of using the we
 
 ### List WebPart
 An example of extending the WebPart Search class to display a list view and item form. The "ItemForm" component will be used to render the item form panel.
+
+### WebPart Tabs
+An example of using the WebPart Tabs class to generate a tab for each associated webpart in the same zone.
