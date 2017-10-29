@@ -55,10 +55,6 @@ export class BatchWebPart extends React.Component<null, State> {
                 <div>
                     <div>{"This list contains " + this.state.list.ItemCount + " items."}</div>
                     <PrimaryButton
-                        onClick={this.createListItems}
-                        text="Add 10 Items"
-                    />
-                    <PrimaryButton
                         onClick={this.deleteList}
                         text="Delete List"
                     />
@@ -85,35 +81,20 @@ export class BatchWebPart extends React.Component<null, State> {
         ev.preventDefault();
 
         // Update the state
-        this.setState({ executeFl: true });
-
-        // Get the lists
-        (new Web()).Lists()
-            // Add the list
-            .add({
-                BaseTemplate: SPTypes.ListTemplateType.GenericList,
-                Title: "DemoBatch"
-            })
-            // Execute the request
-            .execute(list => {
-                // Update the state
-                this.setState({
-                    executeFl: false,
-                    list
-                });
-            });
-    }
-
-    // Method to create the list items
-    private createListItems = (ev: React.MouseEvent<HTMLButtonElement>) => {
-        // Prevent postback
-        ev.preventDefault();
-
-        // Update the state
         this.setState({ executeFl: true })
 
         // Get the current web
         let web = new Web();
+
+        // Get the lists
+        web.Lists()
+            // Create the list
+            .add({
+                BaseTemplate: SPTypes.ListTemplateType.GenericList,
+                Title: "DemoBatch"
+            })
+            // Batch the request
+            .batch();
 
         // Loop 10 times
         let ctr = 0;
