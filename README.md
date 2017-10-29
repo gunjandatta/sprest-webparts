@@ -4,6 +4,9 @@ This project provides examples of using the [gd-sprest](https://gunjandatta.gith
 ### Blog Post
 Refer to this [blog post](http://dattabase.com/sharepoint-react-webparts/) for details on the available webparts to inherit from. The blog post gives an overview of the code for the "Document View WebPart" example.
 
+### Batch Demo WebPart
+An example of the executing batch operations. Refer to this [link](https://social.technet.microsoft.com/wiki/contents/articles/30044.sharepoint-online-performing-batch-operations-using-rest-api.aspx) for Microsoft's documentation for performing batch operations using the SharePoint Online REST API.
+
 ### Document View WebPart
 Simple example of using the WebPartSearch classes to display documents. The search webpart class allows the user to select the searchable fields, currently limited to:
 * Choice/Multi-Choice
