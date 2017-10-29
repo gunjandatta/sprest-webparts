@@ -105,9 +105,6 @@ export class BatchWebPart extends React.Component<null, State> {
                 .Items()
                 // Add an item
                 .add({
-                    __metadata: {
-                        type: "SP.Data.DemoBatchListItem"
-                    },
                     Title: "Batch Item " + (++ctr)
                 })
                 // Batch the new items as one request
