@@ -40,10 +40,10 @@ export class DocViewWebPart extends WebPartSearch {
         ev.preventDefault();
 
         // Get the document url
-        let docUrl = ev.currentTarget.getAttribute("data-docUrl");
+        let docUrl = ev.currentTarget.getAttribute("data-docurl");
 
         // See if this is an office document
-        if (ev.currentTarget.getAttribute("data-isOfficeDoc") == "true") {
+        if (ev.currentTarget.getAttribute("data-isofficedoc") == "true") {
             // Display the document in a modal dialog
             SP.SOD.execute("sp.ui.dialog.js", "SP.UI.ModalDialog.showModalDialog", {
                 showMaximized: true,
@@ -111,8 +111,8 @@ export class DocViewWebPart extends WebPartSearch {
         // Render the item
         return (
             <div className="docView-item"
-                data-docUrl={isOfficeDocFl ? docUrl : item.FileRef}
-                data-isOfficeDoc={isOfficeDocFl}
+                data-docurl={isOfficeDocFl ? docUrl : item.FileRef}
+                data-isofficedoc={isOfficeDocFl}
                 key={"item_" + item.Id}
                 onClick={this.onDocIconClicked}>
                 <Icon className="docView-icon" iconName={iconName} />

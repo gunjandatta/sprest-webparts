@@ -120,7 +120,7 @@ export const Configuration = new Helper.SPConfig({
                 <property name="Description" type="string">The list webpart.</property>
                 <property name="ChromeType" type="chrometype">TitleOnly</property>
                 <property name="Content" type="string">
-                    &lt;script type="text/javascript" src="/sites/dev/siteassets/sprest-react/webparts.js"&gt;&lt;/script&gt;
+                    &lt;script type="text/javascript" src="/sites/dev/siteassets/webparts.js"&gt;&lt;/script&gt;
                     &lt;div id="wp-list"&gt;&lt;/div&gt;
                     &lt;div id="wp-listCfg" style="display:none"&gt;&lt;/div&gt;
                     &lt;script type="text/javascript"&gt;SP.SOD.executeOrDelayUntilScriptLoaded(function() { new DemoWebParts.List(); }, 'webparts.js');&lt;/script&gt;

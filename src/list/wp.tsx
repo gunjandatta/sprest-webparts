@@ -98,10 +98,10 @@ export class ListWebpart extends WebPartSearch<IWebPartSearchProps, State> {
         return (
             <div className="list-row" key={"item_" + item.Id}>
                 <div className="list-col-button">
-                    <PrimaryButton text="View" data-itemId={item.Id} onClick={this.viewItem} />
+                    <PrimaryButton text="View" data-itemid={item.Id} onClick={this.viewItem} />
                 </div>
                 <div className="list-col-button">
-                    <PrimaryButton text="Edit" data-itemId={item.Id} onClick={this.editItem} />
+                    <PrimaryButton text="Edit" data-itemid={item.Id} onClick={this.editItem} />
                 </div>
                 <div className="list-col">
                     {item.Title ? item.Title : ""}
@@ -134,7 +134,7 @@ export class ListWebpart extends WebPartSearch<IWebPartSearchProps, State> {
         // Clear the selected item
         this.setState({
             controlMode: SPTypes.ControlMode.Edit,
-            item: this.getItem(parseInt(el.currentTarget.getAttribute("data-itemId")))
+            item: this.getItem(parseInt(el.currentTarget.getAttribute("data-itemid")))
         }, () => {
             // Show the panel
             this._panel.show();
@@ -166,7 +166,7 @@ export class ListWebpart extends WebPartSearch<IWebPartSearchProps, State> {
         // Clear the selected item
         this.setState({
             controlMode: SPTypes.ControlMode.Display,
-            item: this.getItem(parseInt(el.currentTarget.getAttribute("data-itemId")))
+            item: this.getItem(parseInt(el.currentTarget.getAttribute("data-itemid")))
         }, () => {
             // Show the panel
             this._panel.show();
