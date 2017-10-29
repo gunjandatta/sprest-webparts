@@ -131,7 +131,7 @@ export class BatchWebPart extends React.Component<null, State> {
                 })
                 // Batch the new items as one request
                 .batch(ctr > 1);
-        } while (ctr < 10);
+        } while (ctr < 1);
 
         // Get the list
         web.Lists("DemoBatch").batch(list => {
