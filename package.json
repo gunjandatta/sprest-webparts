@@ -18,14 +18,14 @@
   },
   "homepage": "https://github.com/gunjandatta/sprest-webparts#readme",
   "dependencies": {
-    "gd-sprest": "^2.1.9",
-    "gd-sprest-react": "^1.5.4",
-    "office-ui-fabric-react": "^5.16.0",
+    "gd-sprest": "^2.2.1",
+    "gd-sprest-react": "^1.5.5",
+    "office-ui-fabric-react": "^5.17.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   },
   "devDependencies": {
-    "@types/react": "^16.0.18",
+    "@types/react": "^16.0.19",
     "@types/react-dom": "^16.0.2",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -35,7 +35,7 @@
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
-    "ts-loader": "^3.1.0",
+    "ts-loader": "^3.1.1",
     "webpack": "^3.8.1"
   }
 }
