@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ContextInfo, Email } from "gd-sprest";
+import { ContextInfo, Utility } from "gd-sprest";
 import { SPPeoplePicker } from "gd-sprest-react";
 import { PrimaryButton, TextField } from "office-ui-fabric-react";
 declare var SP;
@@ -38,11 +38,10 @@ export class EmailWebPart extends React.Component<null, null> {
             SP.SOD.execute("sp.ui.dialog.js", "SP.UI.ModalDialog.showWaitScreenWithNoClose", "Sending Email", "Attempting to send the email. This dialog will close after the request completes.");
 
             // Email the user
-            Email.send({
-                From: "", // Send the default email address
+            Utility.sendEmail({
                 Body: this._tb.value,
                 Subject: "Demo Email",
-                To: user.secondaryText
+                To: [user.secondaryText]
             }).execute(() => {
                 // Close the dialog
                 SP.SOD.execute("sp.ui.dialog.js", "SP.UI.ModalDialog.commonModalDialogClose");
