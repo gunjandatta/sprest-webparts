@@ -23,6 +23,9 @@ export class DocViewWebPart extends WebPartSearch {
     constructor(props) {
         super(props);
 
+        // Enable caching
+        this._cacheFl = true;
+
         // Update the query to order by the filename, and include the document fields
         this._query.GetAllItems = true;
         this._query.OrderBy = ["LinkFilename"];
