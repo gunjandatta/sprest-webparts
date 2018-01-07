@@ -18,9 +18,9 @@
   },
   "homepage": "https://github.com/gunjandatta/sprest-webparts#readme",
   "dependencies": {
-    "gd-sprest": "^2.4.2",
-    "gd-sprest-react": "^2.4.3",
-    "office-ui-fabric-react": "^5.36.0",
+    "gd-sprest": "^2.5.8",
+    "gd-sprest-react": "^2.4.5",
+    "office-ui-fabric-react": "^5.38.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
