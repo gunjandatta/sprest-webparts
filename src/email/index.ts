@@ -1,7 +1,7 @@
 import * as React from "react";
-import { WebPart, IWebPartTargetInfo } from "gd-sprest-react";
+import { WebParts } from "gd-sprest-react";
 import { EmailWebPart } from "./wp";
-import {Configuration} from "./cfg";
+import { Configuration } from "./cfg";
 
 /**
  * Email
@@ -9,13 +9,13 @@ import {Configuration} from "./cfg";
 export class Email {
     // Configuration
     static Configuration = Configuration;
-    
+
     /**
      * Constructor
      */
     constructor() {
         // Create an instance of the webpart
-        new WebPart({
+        new WebParts.FabricWebPart({
             displayElement: EmailWebPart,
             targetElementId: "wp-email"
         });

@@ -1,4 +1,4 @@
-import { WebPart, WebPartSearchCfg } from "gd-sprest-react";
+import { WebParts } from "gd-sprest-react";
 import { Configuration } from "./cfg";
 import { DocViewWebPart } from "./wp";
 import "./docView.scss";
@@ -15,10 +15,10 @@ export class DocView {
      */
     constructor() {
         // Create an instance of the webpart
-        new WebPart({
+        new WebParts.FabricWebPart({
             cfgElementId: "wp-docViewCfg",
             displayElement: DocViewWebPart,
-            editElement: WebPartSearchCfg,
+            editElement: WebParts.WebPartSearchCfg,
             targetElementId: "wp-docView",
         });
     }

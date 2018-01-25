@@ -1,5 +1,5 @@
 import { List } from "gd-sprest";
-import { WebPart } from "gd-sprest-react";
+import { WebParts } from "gd-sprest-react";
 import { Configuration } from "./cfg";
 import { BatchWebPart } from "./wp";
 
@@ -15,7 +15,7 @@ export class Batch {
      */
     constructor() {
         // Create an instance of the webpart
-        new WebPart({
+        new WebParts.FabricWebPart({
             displayElement: BatchWebPart,
             targetElementId: "wp-batch",
         });

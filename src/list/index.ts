@@ -1,4 +1,4 @@
-import { WebPart, WebPartSearchCfg } from "gd-sprest-react";
+import { WebParts } from "gd-sprest-react";
 import { Configuration } from "./cfg";
 import { ListWebpart } from "./wp";
 import "./list.scss";
@@ -15,10 +15,10 @@ export class List {
      */
     constructor() {
         // Create an instance of the webpart
-        new WebPart({
+        new WebParts.FabricWebPart({
             cfgElementId: "wp-listCfg",
             displayElement: ListWebpart,
-            editElement: WebPartSearchCfg,
+            editElement: WebParts.WebPartSearchCfg,
             targetElementId: "wp-list",
         });
     }

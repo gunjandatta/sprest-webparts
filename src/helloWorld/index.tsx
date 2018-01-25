@@ -1,5 +1,5 @@
 import * as React from "react";
-import { WebPart, IWebPartTargetInfo } from "gd-sprest-react";
+import { WebParts } from "gd-sprest-react";
 import { Configuration } from "./cfg";
 
 /**
@@ -16,7 +16,7 @@ export class HelloWorld {
      */
     constructor() {
         // Create an instance of the webpart
-        new WebPart({
+        new WebParts.FabricWebPart({
             cfgElementId: "wp-helloWorldCfg",
             onRenderDisplayElement: this.renderDisplayElement,
             onRenderEditElement: this.renderEditElement,
@@ -29,7 +29,7 @@ export class HelloWorld {
      */
 
     // Method to render the display mode component
-    private renderDisplayElement = (targetInfo: IWebPartTargetInfo) => {
+    private renderDisplayElement = (targetInfo: WebParts.IFabricWebPartInfo) => {
         // Render the element
         return (
             <div>{"The webpart id is: " + targetInfo.cfg.WebPartId}</div>
@@ -37,7 +37,7 @@ export class HelloWorld {
     }
 
     // Method to render the edit mode component
-    private renderEditElement = (targetInfo: IWebPartTargetInfo) => {
+    private renderEditElement = (targetInfo: WebParts.IFabricWebPartInfo) => {
         // Render the element
         return (
             <div>{"The page is in edit mode."}</div>

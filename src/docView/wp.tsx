@@ -1,13 +1,13 @@
 import * as React from "react";
 import { ContextInfo } from "gd-sprest";
-import { WebPartSearch, IWebPartSearchItem } from "gd-sprest-react";
+import { WebParts } from "gd-sprest-react";
 import { Icon } from "office-ui-fabric-react";
 declare var SP;
 
 /**
  * Document Item
  */
-interface IDocument extends IWebPartSearchItem {
+interface IDocument extends WebParts.IWebPartSearchItem {
     DocIcon: string;
     FileRef: string;
     LinkFilename: string;
@@ -16,7 +16,7 @@ interface IDocument extends IWebPartSearchItem {
 /**
  * Document View
  */
-export class DocViewWebPart extends WebPartSearch {
+export class DocViewWebPart extends WebParts.WebPartSearch {
     /**
      * Constructor
      */

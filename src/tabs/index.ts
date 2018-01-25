@@ -1,4 +1,4 @@
-import { WebPart, WebPartTabs } from "gd-sprest-react";
+import { WebParts } from "gd-sprest-react";
 import { Configuration } from "./cfg";
 
 /**
@@ -13,8 +13,8 @@ export class Tabs {
      */
     constructor() {
         // Create an instance of the webpart
-        new WebPart({
-            displayElement: WebPartTabs,
+        new WebParts.FabricWebPart({
+            displayElement: WebParts.WebPartTabs,
             targetElementId: "wp-tabs",
         });
     }

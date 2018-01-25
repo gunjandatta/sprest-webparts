@@ -1,6 +1,6 @@
 import * as React from "react";
 import { ContextInfo, Utility } from "gd-sprest";
-import { SPPeoplePicker } from "gd-sprest-react";
+import { Components } from "gd-sprest-react";
 import { PrimaryButton, TextField } from "office-ui-fabric-react";
 declare var SP;
 
@@ -8,14 +8,14 @@ declare var SP;
  * Email
  */
 export class EmailWebPart extends React.Component<null, null> {
-    private _spPicker: SPPeoplePicker = null;
+    private _spPicker: Components.SPPeoplePicker = null;
     private _tb: TextField = null;
 
     // Render the component
     render() {
         return (
             <div>
-                <SPPeoplePicker ref={picker => { this._spPicker = picker; }} />
+                <Components.SPPeoplePicker ref={picker => { this._spPicker = picker; }} />
                 <TextField multiline={true} rows={6} ref={tb => { this._tb = tb; }} />
                 <PrimaryButton text="Email" onClick={this.sendEmail} />
             </div>

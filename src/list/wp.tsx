@@ -1,18 +1,18 @@
 import * as React from "react";
 import { SPTypes, Types } from "gd-sprest";
-import { ItemForm, Panel, WebPartSearch, IWebPartSearchProps, IWebPartSearchState } from "gd-sprest-react";
+import { Components, WebParts } from "gd-sprest-react";
 import { PrimaryButton } from "office-ui-fabric-react";
 
 /**
  * List Item Information
  */
-export interface IListItem extends Types.IListItemQueryResult {
+export interface IListItem extends Types.SP.IListItemQueryResult {
     Attachments?: boolean;
     TestBoolean?: boolean;
     TestChoice?: string;
     TestDate?: string;
     TestDateTime?: string;
-    TestLookup?: Types.ComplexTypes.FieldLookupValue;
+    TestLookup?: Types.SP.ComplexTypes.FieldLookupValue;
     TestLookupId?: string | number;
     TestMultiChoice?: string;
     TestMultiLookup?: string;
@@ -22,8 +22,8 @@ export interface IListItem extends Types.IListItemQueryResult {
     TestNote?: string;
     TestNumberDecimal?: number;
     TestNumberInteger?: number;
-    TestUrl?: Types.ComplexTypes.FieldUrlValue;
-    TestUser?: Types.ComplexTypes.FieldUserValue;
+    TestUrl?: Types.SP.ComplexTypes.FieldUrlValue;
+    TestUser?: Types.SP.ComplexTypes.FieldUserValue;
     TestUserId?: string | number;
     Title?: string;
 }
@@ -31,7 +31,7 @@ export interface IListItem extends Types.IListItemQueryResult {
 /**
  * State
  */
-interface State extends IWebPartSearchState {
+interface State extends WebParts.IWebPartSearchState {
     controlMode?: number;
     errorMessage?: string;
     item?: IListItem;
@@ -40,9 +40,9 @@ interface State extends IWebPartSearchState {
 /**
  * List WebPart
  */
-export class ListWebpart extends WebPartSearch<IWebPartSearchProps, State> {
-    private _itemForm: ItemForm = null;
-    private _panel: Panel = null;
+export class ListWebpart extends WebParts.WebPartSearch<WebParts.IWebPartSearchProps, State> {
+    private _itemForm: Components.ItemForm = null;
+    private _panel: Components.Panel = null;
 
     /**
      * Constructor
@@ -76,14 +76,14 @@ export class ListWebpart extends WebPartSearch<IWebPartSearchProps, State> {
                 <div className="list">
                     {elItems}
                     <div className="list-row" key="item_form">
-                        <Panel headerText="Item Form" ref={panel => { this._panel = panel; }}>
+                        <Components.Panel headerText="Item Form" ref={panel => { this._panel = panel; }}>
                             <div className="">{this.state.errorMessage + ""}</div>
-                            <ItemForm
+                            <Components.ItemForm
                                 controlMode={this.state.controlMode}
                                 item={this.state.item}
                                 listName={this.props.cfg.ListName}
                             />
-                        </Panel>
+                        </Components.Panel>
                     </div>
                 </div>
             );

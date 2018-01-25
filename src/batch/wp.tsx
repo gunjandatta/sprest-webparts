@@ -7,7 +7,7 @@ import { PrimaryButton, Spinner } from "office-ui-fabric-react";
  */
 interface State {
     executeFl: boolean;
-    list: Types.IListResult;
+    list: Types.SP.IListResult;
 }
 
 /**
