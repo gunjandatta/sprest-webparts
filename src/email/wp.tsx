@@ -1,7 +1,7 @@
 import * as React from "react";
-import { ContextInfo, Utility } from "gd-sprest";
+import { Utility } from "gd-sprest";
 import { Components } from "gd-sprest-react";
-import { PrimaryButton, TextField } from "office-ui-fabric-react";
+import { PrimaryButton, TextField, ITextField } from "office-ui-fabric-react";
 declare var SP;
 
 /**
@@ -9,14 +9,14 @@ declare var SP;
  */
 export class EmailWebPart extends React.Component<null, null> {
     private _spPicker: Components.SPPeoplePicker = null;
-    private _tb: TextField = null;
+    private _tb: ITextField = null;
 
     // Render the component
     render() {
         return (
             <div>
                 <Components.SPPeoplePicker ref={picker => { this._spPicker = picker; }} />
-                <TextField multiline={true} rows={6} ref={tb => { this._tb = tb; }} />
+                <TextField multiline={true} rows={6} componentRef={tb => { this._tb = tb; }} />
                 <PrimaryButton text="Email" onClick={this.sendEmail} />
             </div>
         );
@@ -38,7 +38,7 @@ export class EmailWebPart extends React.Component<null, null> {
             SP.SOD.execute("sp.ui.dialog.js", "SP.UI.ModalDialog.showWaitScreenWithNoClose", "Sending Email", "Attempting to send the email. This dialog will close after the request completes.");
 
             // Email the user
-            Utility.sendEmail({
+            Utility().sendEmail({
                 Body: this._tb.value,
                 Subject: "Demo Email",
                 To: [user.secondaryText]

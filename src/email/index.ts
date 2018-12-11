@@ -15,7 +15,7 @@ export class Email {
      */
     constructor() {
         // Create an instance of the webpart
-        new WebParts.FabricWebPart({
+        WebParts.FabricWebPart({
             displayElement: EmailWebPart,
             targetElementId: "wp-email"
         });

@@ -84,13 +84,13 @@ export class BatchWebPart extends React.Component<null, State> {
         this.setState({ executeFl: true })
 
         // Get the current web
-        let web = new Web();
+        let web = Web();
 
         // Get the lists
         web.Lists()
             // Create the list
             .add({
-                BaseTemplate: SPTypes.ListTemplateType.GenericList,
+                TemplateType: SPTypes.ListTemplateType.GenericList,
                 Title: "DemoBatch"
             })
             // Batch the request
@@ -139,7 +139,7 @@ export class BatchWebPart extends React.Component<null, State> {
     // Load the list
     private loadList = () => {
         // Get the list
-        (new List("DemoBatch")).execute(list => {
+        List("DemoBatch").execute(list => {
             // Update the state
             this.setState({ list });
         });

@@ -15,7 +15,7 @@ export class DocView {
      */
     constructor() {
         // Create an instance of the webpart
-        new WebParts.FabricWebPart({
+        WebParts.FabricWebPart({
             cfgElementId: "wp-docViewCfg",
             displayElement: DocViewWebPart,
             editElement: WebParts.WebPartSearchCfg,

@@ -15,7 +15,7 @@ export class List {
      */
     constructor() {
         // Create an instance of the webpart
-        new WebParts.FabricWebPart({
+        WebParts.FabricWebPart({
             cfgElementId: "wp-listCfg",
             displayElement: ListWebpart,
             editElement: WebParts.WebPartSearchCfg,

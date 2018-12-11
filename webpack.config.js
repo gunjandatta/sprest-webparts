@@ -21,39 +21,29 @@ module.exports = {
 
     // Module to define what libraries with the compiler
     module: {
-        // Loaders
-        loaders: [
+        rules: [
             {
-                // Target the sass files
-                test: /\.scss?$/,
-                // Define the compiler to use
+                test: /\.(s?css)$/,
                 use: [
-                    // Create style nodes from the CommonJS code
+                    // Inject CSS to the page
                     { loader: "style-loader" },
-                    // Translate css to CommonJS
+                    // Translate CSS to CommonJS
                     { loader: "css-loader" },
-                    // Compile sass to css
+                    // Compile SASS to CSS
                     { loader: "sass-loader" }
                 ]
             },
             {
-                // Target the typescript files
                 test: /\.tsx?$/,
-                // Exclude the npm libraries
                 exclude: /node_modules/,
-                // Define the compiler to use
                 use: [
                     {
-                        // Use the "babel-loader" library
                         loader: "babel-loader",
-                        // Options
                         options: {
-                            // Use the 'babel-preset-es2015' library
-                            presets: ["es2015"]
+                            presets: ["@babel/preset-env"]
                         }
                     },
                     {
-                        // Use the "ts-loader" library
                         loader: "ts-loader"
                     }
                 ]

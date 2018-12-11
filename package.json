@@ -4,7 +4,8 @@
   "description": "",
   "main": "dist/webparts.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack --mode=development",
+    "prod": "webpack --mode=production"
   },
   "repository": {
     "type": "git",
@@ -18,24 +19,27 @@
   },
   "homepage": "https://github.com/gunjandatta/sprest-webparts#readme",
   "dependencies": {
-    "gd-sprest": "^3.1.8",
-    "gd-sprest-react": "^2.8.1",
-    "office-ui-fabric-react": "^5.38.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "gd-sprest": "^4.4.1",
+    "gd-sprest-def": "^0.1.0",
+    "gd-sprest-react": "^3.0.1",
+    "office-ui-fabric-react": "^6.111.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
     "@types/react": "^16.0.31",
     "@types/react-dom": "^16.0.3",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-es2015": "^6.24.1",
-    "css-loader": "^0.28.7",
+    "babel-loader": "^8.0.4",
+    "core-js": "^2.6.0",
+    "css-loader": "^1.0.0",
     "es6-promise": "^4.2.2",
-    "node-sass": "^4.7.2",
-    "sass-loader": "^6.0.6",
-    "style-loader": "^0.19.1",
-    "ts-loader": "^3.2.0",
-    "webpack": "^3.10.0"
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.22.1",
+    "ts-loader": "^5.3.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
   }
 }

@@ -1,7 +1,8 @@
 import * as React from "react";
 import { SPTypes, Types } from "gd-sprest";
+import { SP } from "gd-sprest-def";
 import { Components, WebParts } from "gd-sprest-react";
-import { PrimaryButton } from "office-ui-fabric-react";
+import { Panel, IPanel, PrimaryButton } from "office-ui-fabric-react";
 
 /**
  * List Item Information
@@ -12,7 +13,7 @@ export interface IListItem extends Types.SP.IListItemQueryResult {
     TestChoice?: string;
     TestDate?: string;
     TestDateTime?: string;
-    TestLookup?: Types.SP.ComplexTypes.FieldLookupValue;
+    TestLookup?: SP.FieldLookupValue;
     TestLookupId?: string | number;
     TestMultiChoice?: string;
     TestMultiLookup?: string;
@@ -22,8 +23,8 @@ export interface IListItem extends Types.SP.IListItemQueryResult {
     TestNote?: string;
     TestNumberDecimal?: number;
     TestNumberInteger?: number;
-    TestUrl?: Types.SP.ComplexTypes.FieldUrlValue;
-    TestUser?: Types.SP.ComplexTypes.FieldUserValue;
+    TestUrl?: SP.FieldUrlValue;
+    TestUser?: SP.Data.UserInfoItem;
     TestUserId?: string | number;
     Title?: string;
 }
@@ -41,8 +42,7 @@ interface State extends WebParts.IWebPartSearchState {
  * List WebPart
  */
 export class ListWebpart extends WebParts.WebPartSearch<WebParts.IWebPartSearchProps, State> {
-    private _itemForm: Components.ItemForm = null;
-    private _panel: Components.Panel = null;
+    private _panel: IPanel = null;
 
     /**
      * Constructor
@@ -76,14 +76,14 @@ export class ListWebpart extends WebParts.WebPartSearch<WebParts.IWebPartSearchP
                 <div className="list">
                     {elItems}
                     <div className="list-row" key="item_form">
-                        <Components.Panel headerText="Item Form" ref={panel => { this._panel = panel; }}>
+                        <Panel headerText="Item Form" componentRef={panel => { this._panel = panel; }}>
                             <div className="">{this.state.errorMessage + ""}</div>
                             <Components.ItemForm
                                 controlMode={this.state.controlMode}
                                 item={this.state.item}
                                 listName={this.props.cfg.ListName}
                             />
-                        </Components.Panel>
+                        </Panel>
                     </div>
                 </div>
             );
@@ -140,7 +140,7 @@ export class ListWebpart extends WebParts.WebPartSearch<WebParts.IWebPartSearchP
             item: this.getItem(parseInt(el.currentTarget.getAttribute("data-itemid")))
         }, () => {
             // Show the panel
-            this._panel.show();
+            this._panel.open();
         });
     }
 
@@ -172,7 +172,7 @@ export class ListWebpart extends WebParts.WebPartSearch<WebParts.IWebPartSearchP
             item: this.getItem(parseInt(el.currentTarget.getAttribute("data-itemid")))
         }, () => {
             // Show the panel
-            this._panel.show();
+            this._panel.open();
         });
     }
 }

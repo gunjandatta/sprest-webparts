@@ -15,7 +15,7 @@ export class Batch {
      */
     constructor() {
         // Create an instance of the webpart
-        new WebParts.FabricWebPart({
+        WebParts.FabricWebPart({
             displayElement: BatchWebPart,
             targetElementId: "wp-batch",
         });

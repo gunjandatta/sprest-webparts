@@ -16,7 +16,7 @@ export class HelloWorld {
      */
     constructor() {
         // Create an instance of the webpart
-        new WebParts.FabricWebPart({
+        WebParts.FabricWebPart({
             cfgElementId: "wp-helloWorldCfg",
             onRenderDisplayElement: this.renderDisplayElement,
             onRenderEditElement: this.renderEditElement,

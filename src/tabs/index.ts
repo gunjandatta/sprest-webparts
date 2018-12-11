@@ -13,7 +13,7 @@ export class Tabs {
      */
     constructor() {
         // Create an instance of the webpart
-        new WebParts.FabricWebPart({
+        WebParts.FabricWebPart({
             displayElement: WebParts.WebPartTabs,
             targetElementId: "wp-tabs",
         });

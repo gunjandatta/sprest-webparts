@@ -3,7 +3,7 @@ import { Helper } from "gd-sprest";
 /**
  * Configuration
  */
-export const Configuration = new Helper.SPConfig({
+export const Configuration = Helper.SPConfig({
     WebPartCfg: [
         {
             FileName: "wp_helloWorld.webpart",
