@@ -8,6 +8,7 @@ import { PrimaryButton, Spinner } from "office-ui-fabric-react";
 interface State {
     executeFl: boolean;
     list: Types.SP.IListResult;
+    loadFl: boolean;
 }
 
 /**
@@ -23,14 +24,15 @@ export class BatchWebPart extends React.Component<null, State> {
         // Set the state
         this.state = {
             executeFl: false,
-            list: null
+            list: null,
+            loadFl: false
         };
     }
 
     // Render the webpart
     render() {
         // See if the list exist
-        if (this.state.list == null) {
+        if (this.state.list == null && !this.state.loadFl) {
             // Load the list
             this.loadList();
 
@@ -49,7 +51,7 @@ export class BatchWebPart extends React.Component<null, State> {
         }
 
         // See if the list exists
-        if (this.state.list.existsFl) {
+        if (this.state.list) {
             // Render a message
             return (
                 <div>
@@ -77,6 +79,7 @@ export class BatchWebPart extends React.Component<null, State> {
 
     // Method to create the list
     private createList = (ev: React.MouseEvent<HTMLButtonElement>) => {
+        debugger;
         // Prevent postback
         ev.preventDefault();
 
@@ -139,9 +142,22 @@ export class BatchWebPart extends React.Component<null, State> {
     // Load the list
     private loadList = () => {
         // Get the list
-        List("DemoBatch").execute(list => {
-            // Update the state
-            this.setState({ list });
-        });
+        List("DemoBatch").execute(
+            // Success
+            list => {
+                // Update the state
+                this.setState({
+                    list,
+                    loadFl: true
+                });
+            },
+            // Error
+            () => {
+                // Update the state
+                this.setState({
+                    loadFl: true
+                });
+            }
+        );
     }
 }
