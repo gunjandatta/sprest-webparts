@@ -1,7 +1,8 @@
 import * as React from "react";
 import { Utility } from "gd-sprest";
 import { Components } from "gd-sprest-react";
-import { PrimaryButton, TextField, ITextField } from "office-ui-fabric-react";
+import { PrimaryButton } from "office-ui-fabric-react/lib/Button";
+import { TextField, ITextField } from "office-ui-fabric-react/lib/TextField";
 declare var SP;
 
 /**

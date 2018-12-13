@@ -21,7 +21,7 @@
   "dependencies": {
     "gd-sprest": "^4.4.4",
     "gd-sprest-def": "^0.1.0",
-    "gd-sprest-react": "^3.0.2",
+    "gd-sprest-react": "^3.0.3",
     "office-ui-fabric-react": "^6.111.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3"

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { ContextInfo } from "gd-sprest";
 import { WebParts } from "gd-sprest-react";
-import { Icon } from "office-ui-fabric-react";
+import { Icon } from "office-ui-fabric-react/lib/Icon";
 declare var SP;
 
 /**

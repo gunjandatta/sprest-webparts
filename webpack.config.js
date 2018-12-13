@@ -1,5 +1,4 @@
 var path = require('path');
-var webpack = require("webpack");
 
 module.exports = {
     // Target the output of the typescript compiler

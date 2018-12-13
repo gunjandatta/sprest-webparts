@@ -1,6 +1,7 @@
 import * as React from "react";
 import { List, SPTypes, Types, Web } from "gd-sprest";
-import { PrimaryButton, Spinner } from "office-ui-fabric-react";
+import { PrimaryButton } from "office-ui-fabric-react/lib/Button";
+import { Spinner } from "office-ui-fabric-react/lib/Spinner";
 
 /**
  * State
