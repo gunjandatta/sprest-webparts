@@ -93,7 +93,7 @@ export class BatchWebPart extends React.Component<null, State> {
         web.Lists()
             // Create the list
             .add({
-                TemplateType: SPTypes.ListTemplateType.GenericList,
+                BaseTemplate: SPTypes.ListTemplateType.GenericList,
                 Title: "DemoBatch"
             })
             // Batch the request
