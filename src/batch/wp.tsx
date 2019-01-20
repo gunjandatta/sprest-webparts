@@ -80,7 +80,6 @@ export class BatchWebPart extends React.Component<null, State> {
 
     // Method to create the list
     private createList = (ev: React.MouseEvent<HTMLButtonElement>) => {
-        debugger;
         // Prevent postback
         ev.preventDefault();
 
